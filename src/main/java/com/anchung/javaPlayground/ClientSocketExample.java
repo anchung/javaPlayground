@@ -8,7 +8,8 @@ import java.net.Socket;
 
 public class ClientSocketExample {
     public static void main(String[] args) {
-        try(Socket socket = new Socket("www.google.com", 80)) {
+//        try(Socket socket = new Socket("www.google.com", 80)) {
+        try(Socket socket = new Socket("localhost", 13)) {
             socket.setSoTimeout(5000);
             BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter pw = new PrintWriter(socket.getOutputStream(), true);
@@ -23,11 +24,11 @@ public class ClientSocketExample {
             }
 
             br.close();
-
-            FileWriter fw = new FileWriter("/tmp/google.html", false);
+            System.out.println("Server Time: " + sb);
+            /*FileWriter fw = new FileWriter("/tmp/google.html", false);
             fw.append(sb);
             fw.flush();
-            fw.close();
+            fw.close();*/
         } catch (Exception e) {
             e.printStackTrace();
         }
