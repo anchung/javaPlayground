@@ -1,4 +1,4 @@
-package com.anchung.javaPlayground;
+package com.anchungman.javaPlayground;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
